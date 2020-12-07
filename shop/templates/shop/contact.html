@@ -1,0 +1,142 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %}Contact Us{% endblock %}
+
+{%block css%}
+<style>
+     .bd{
+         margin-top: 80px;
+     }
+     footer{
+         background-color: black;
+         color: white;
+     }
+     .fa {
+        padding: 20px;
+        font-size: 20px;
+        width: 60px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+        border-radius: 30px;
+     }
+     .fa:hover {
+        opacity: 0.7;
+      }
+     .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+     .fa-twitter {
+        background: #55ACEE;
+        color: white;
+      }
+     .fa-instagram {
+        background: #125688;
+        color: white;
+      }
+     .fa-google {
+        background: #dd4b39;
+        color: white;
+      }
+      .test{
+        margin-right : 30px;
+      }
+ </style>
+{%endblock%}
+
+{% block body %}
+
+<div class="container bd">
+     <div class="row">
+         <div class="col-xs-9">
+           <br>
+             <h1>LIVE SUPPORT</h1>
+             <p style="font-size:20px">24 hours | 7 days a week | 365 days a year Live Technical Support</p>
+             <p>
+                 "We are incredibly responsive to your requests and value your questions." <br>
+                  Email us with any questions or inquiries or call +91-123-000000 .We
+                  would be happy to answer your <br>questions and set up a meeting with you.
+                  Your questions and comments are important to us.<br>
+                  You can get information about an order you placed on the My Awesome Cart through the cart page.<br>
+                  If you prefer you can get order status and make changes by phone at +91-123-000000. <br>
+                  Hope our service will satisfy you, and again you will meet us at our My Awesome Cart.<font><b>Thank You...</b>
+             </p>
+             <p></p>
+         </div>
+         <div class="col-xs-3">
+             {% load static %}
+             <img src="{% static 'shop/customer_care.jpg' %}" alt="customer care" width="250" height="250">
+         </div>
+     </div>
+     <div class="row">
+         <div class="col-xs-7 test">
+             <h2>CONTACT US</h2>
+             <form action="/shop/contact/" method="post">  {% csrf_token %}
+                 <div class="form-group">
+                     <label for="name">Name</label>
+                     <input type="text" name="name" class="form-control" required="true">
+                 </div>
+                 <div class="form-group">
+                     <label for="email">Email</label>
+                     <input type="email" name="email" class="form-control" required="true">
+                 </div>
+                 <div class="form-group">
+                     <label for="phone">Phone</label>
+                     <input type="tel" name="phone" class="form-control" required="true">
+                 </div>
+                 <div class="form-group">
+                     <label>Message:</label><br>
+                     <textarea name="desc" rows="4" cols="32" required="true"></textarea>
+                 </div>
+                 <div class="form-group">
+                     <button type="submit" class="btn btn-primary">Submit</button>
+                 </div>
+             </form>
+         </div>
+         <div class="col-xs-5">
+           <br><br><hr>
+             <h2>Company Information:</h2>
+             <p>
+                 My Awesome Cart is an Indian e-commerce company based in Mumbai, Maharashtra, India. <br>
+                 It was founded by Aaditya Tyagi and Jenny Tyagi in 2007.<br>
+                 My Awesome Cart Internet Private Limited,<br>
+                 Clove Embassy Tech Village, Outer Ring Road, <br>
+                 Mumbai, 560103, Mahabharata, India.<br>
+                 Phone:(00)222 666 444<br>
+                 Fax:(000)000 00 00 0<br>
+                 Email:info@mac.com<br>
+                 <hr>&nbsp;&nbsp;
+                    <a href="" class="fa fa-facebook"></a>
+                    &nbsp;&nbsp;
+                    <a href="" class="fa fa-twitter"></a>
+                    &nbsp;&nbsp;
+                    <a href="" class="fa fa-google"></a>
+                    &nbsp;&nbsp;
+                    <a href="" class="fa fa-instagram"></a>
+                 <hr>
+             </p>
+         </div>
+     </div>
+ </div>
+
+{% endblock %}
+
+
+{% if success %}
+   alert("We have got your message...ASAP our team will look into that...Thanks For Your Visiting Us..");
+
+{% endif %}
+
+{% block js %}
+<script>
+
+{% if thank %}
+   alert("Thanks for contacting with us, we will get in touch with you very soon..");
+   document.location = "/shop";
+{% endif %}
+
+
+</script>
+
+{% endblock %}

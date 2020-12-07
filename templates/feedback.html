@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Feedback</title>
+    <style media="screen">
+      p{
+        color: #808080   ;
+      }
+      body{
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container col-sm-12"
+      <form class="" action="/" method="post"> {% csrf_token %}
+        <h1>Feedback Form</h1>
+        <p>We would love to hear your thoughts,suggestions,concerns and problems with anything so we can improve!</p>
+        <hr>
+        <h4>Feedback Type</h4>
+        <input type="radio" id="comment" name="feedback" value="Comment">
+        <label for="comment">Comment</label>
+        <input type="radio" id="suggestions" name="feedback" value="Suggestions">
+        <label for="suggestions">Suggestions</label>
+        <input type="radio" id="question" name="feedback" value="Question">
+        <label for="question">Question</label>
+        <br><br>
+        <h4>Describe Your Feedback</h4>
+        <textarea name="name" rows="6" cols="80" required="true"></textarea>
+        <br><br>
+        <h4>Name</h4>
+        <table>
+          <tr>
+            <td><input type="text" name="" value=""></td>
+            <td><input type="text" name="" value=""></td>
+          </tr>
+          <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+          </tr>
+        </table>
+        <br>
+        <h4>Email</h4>
+        <input type="email" name="" value="" required="true"><br>
+        example@example.com
+        <hr>
+        <button class="btn btn-lg btn-success" type="button" name="button">Submit Feedback</button>
+      </form>
+    </div>
+
+  </body>
+</html>

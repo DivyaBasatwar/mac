@@ -1,0 +1,95 @@
+<!-- templates/home.html -->
+{% extends 'base2.html' %}
+<!--{% include "book/library.html"%}-->
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block css %}
+
+#banner_image{
+padding-top: 75px;;
+padding-bottom: 50px;
+text-align: center;
+color: #f8f8f8;
+background: url({% static "img/library.jpg" %}) no-repeat center center;
+background-size: cover;
+height : 650px;
+<!--Extra added-->
+}
+.banner_content{
+position: relative;
+padding-top: 6%;
+padding-bottom: 6%;
+margin-top: 12%;
+margin-bottom: 12%;
+background-color: rgba(0,0,0,0.7);
+max-width: 660PX;
+}
+.inner_black_box{
+margin-top: 80px;
+}
+footer{
+ padding: 10px 0;
+ background-color: #101010;
+ color: #9d9d9d;
+ margin-top: 50px;   <!--Extra added needs to be modified later-->
+ margin-bottom: 0;
+ width: 100%;
+           }
+{% endblock %}
+
+{% block content %}
+
+<div id="banner_image">
+  <div class="container">
+    <div class="col-xs-7 col-xs-offset-3 inner_black_box">
+      <div class="banner_content">
+        <h1>We Sell Lifestyle</h1>
+        <p>Flat 40% off on premium brands</p>
+        <button class="btn btn-danger btn-lg active"><a href="{% url 'login' %}">Shop Now</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+
+<div class="container">
+    <div class="row text-center">
+          <div class="col-md-4">
+             <div class="thumbnail">
+                   <a href="{% url 'login' %}"><img src="{% static "img/1.jpg" %}" alt="camera image"></a>
+                   <div class="caption">
+                       <h2>Cameras</h2>
+                       <p>Choose among the best available in the world.</p>
+                   </div>
+             </div>
+          </div>
+          <div class="col-md-4">
+                 <div class="thumbnail" >
+                    <a href="{% url 'login' %}"><img src="{% static "img/7.jpg" %}" alt="watch image"></a>
+                   <div class="caption">
+                       <h2>Watch</h2>
+                       <p>Choose among the best available in the world.</p>
+                   </div>
+                  </div>
+          </div>
+          <div class="col-md-4">
+                 <div class="thumbnail" >
+                   <a href="{% url 'login' %}"><img src="{% static "img/8.jpg" %}" alt="shirt image"></a>
+                   <div class="caption">
+                       <h2>Shirt</h2>
+                       <p>Choose among the best available in the world.</p>
+                   </div>
+                  </div>
+          </div>
+    </div>
+ </div>
+
+<footer>
+    <div class="container">
+        <center>
+           Copyright © My Awesome Cart. All Rights  Reserved ​and ​Contact Us: +91 90000 00000
+        </center>
+    </div>
+</footer>
+{% endblock %}
